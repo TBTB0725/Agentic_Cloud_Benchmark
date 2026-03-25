@@ -1,0 +1,8 @@
+{
+  "code_only_local_repo_buggy": {
+    "use_gold_patch": true
+  },
+  "combined_local_fixture": {
+    "use_gold_patch": true
+  }
+}

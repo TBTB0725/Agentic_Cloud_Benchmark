@@ -1,0 +1,45 @@
+{
+  "scenario_id": "code_only_local_repo_buggy",
+  "title": "Local buggy repository repair benchmark",
+  "mode": "code_only",
+  "service": {
+    "application": "acbench-local-fixture",
+    "service": "samplepkg",
+    "deployment": "local",
+    "repository_path": "acbench/fixtures/local_repo_buggy"
+  },
+  "code_fault": {
+    "source": "acbench",
+    "defect_id": "local-repo-buggy-addition-001",
+    "description": "A seeded bug in a local Python fixture repository. The benchmark is successful when a candidate patch restores the failing tests.",
+    "target_files": [
+      "src/samplepkg/calculator.py"
+    ]
+  },
+  "build": {
+    "rebuild_cmds": [
+      "python -m compileall src"
+    ],
+    "test_cmds": [
+      "$env:PYTHONPATH='src'; python -m unittest discover -s tests -p \"test_*.py\" -v"
+    ],
+    "print_cmds": [],
+    "log_parser": "none"
+  },
+  "success_criteria": {
+    "require_repair": true,
+    "require_build_success": true,
+    "require_test_success": true
+  },
+  "metrics": [
+    "build_success",
+    "test_success"
+  ],
+  "tags": [
+    "prototype",
+    "code",
+    "fixture"
+  ],
+  "notes": "Use this with --code-patch acbench/patches/local_repo_buggy_fix.diff to validate the minimal patch-based code benchmark path.",
+  "gold_patch_path": "acbench/patches/local_repo_buggy_fix.diff"
+}

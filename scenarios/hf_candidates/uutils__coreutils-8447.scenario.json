@@ -1,0 +1,31 @@
+{
+  "scenario_id": "swebench_native_uutils__coreutils-8447",
+  "title": "Native SWE-bench-Live benchmark for uutils__coreutils-8447",
+  "mode": "code_only",
+  "service": {
+    "application": "swe-bench-live",
+    "service": "coreutils",
+    "deployment": "container"
+  },
+  "code_fault": {
+    "source": "swe-bench-live",
+    "defect_id": "uutils__coreutils-8447",
+    "description": "Native SWE-bench-Live instance from uutils/coreutils.",
+    "instance_path": "acbench\\scenarios\\hf_candidates\\uutils__coreutils-8447.instance.json",
+    "platform": "linux"
+  },
+  "success_criteria": {
+    "require_repair": true,
+    "require_test_success": true
+  },
+  "metrics": [
+    "resolved"
+  ],
+  "tags": [
+    "prototype",
+    "code",
+    "swebench-live",
+    "native"
+  ],
+  "notes": "Generated from a native SWE-bench-Live instance JSON."
+}

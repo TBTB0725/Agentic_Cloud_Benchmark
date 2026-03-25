@@ -1,0 +1,42 @@
+{
+  "scenario_id": "code_only_smoke_local",
+  "title": "Local code executor smoke test",
+  "mode": "code_only",
+  "service": {
+    "application": "acbench-smoke",
+    "service": "local-workspace",
+    "deployment": "local",
+    "repository_path": "."
+  },
+  "code_fault": {
+    "source": "acbench",
+    "defect_id": "smoke-local-001",
+    "description": "Smoke scenario to validate the real local code executor path without external backend dependencies.",
+    "target_files": []
+  },
+  "build": {
+    "rebuild_cmds": [
+      "Write-Output \"acbench build smoke passed\""
+    ],
+    "test_cmds": [
+      "Write-Output \"acbench test smoke passed\""
+    ],
+    "print_cmds": [],
+    "log_parser": "none"
+  },
+  "success_criteria": {
+    "require_repair": true,
+    "require_build_success": true,
+    "require_test_success": true
+  },
+  "metrics": [
+    "build_success",
+    "test_success"
+  ],
+  "tags": [
+    "prototype",
+    "code",
+    "smoke"
+  ],
+  "notes": "This scenario is intentionally simple and exists to validate the live local code executor path."
+}

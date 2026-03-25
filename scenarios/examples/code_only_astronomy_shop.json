@@ -1,0 +1,48 @@
+{
+  "scenario_id": "code_only_astronomy_shop_seed_defect",
+  "title": "Astronomy Shop code-only repair benchmark",
+  "mode": "code_only",
+  "service": {
+    "application": "astronomy-shop",
+    "service": "product-catalog-service",
+    "deployment": "k8s",
+    "repository_path": "acbench/fixtures/astronomy_shop_placeholder"
+  },
+  "code_fault": {
+    "source": "acbench",
+    "defect_id": "seed-defect-product-catalog-001",
+    "description": "Prototype placeholder for a local code-repair task seeded by ACBench.",
+    "target_files": [
+      "src/product-catalog-service"
+    ]
+  },
+  "build": {
+    "rebuild_cmds": [
+      "Write-Output \"placeholder astronomy-shop build step\""
+    ],
+    "test_cmds": [
+      "Write-Output \"placeholder astronomy-shop test step\""
+    ],
+    "print_cmds": [
+      "Write-Output \"placeholder astronomy-shop log step\""
+    ],
+    "log_parser": "custom"
+  },
+  "success_criteria": {
+    "require_repair": true,
+    "require_build_success": true,
+    "require_test_success": true
+  },
+  "metrics": [
+    "build_success",
+    "test_success",
+    "FAIL_TO_PASS",
+    "PASS_TO_PASS"
+  ],
+  "tags": [
+    "prototype",
+    "code",
+    "astronomy-shop"
+  ],
+  "notes": "Phase 1 placeholder scenario. Real commands and parser will be defined after backend wiring."
+}

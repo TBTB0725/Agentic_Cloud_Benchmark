@@ -1,0 +1,10 @@
+diff --git a/src/samplepkg/calculator.py b/src/samplepkg/calculator.py
+index c9fc233..51b6ea2 100644
+--- a/src/samplepkg/calculator.py
++++ b/src/samplepkg/calculator.py
+@@ -3,6 +3,6 @@
+ def add(left: int, right: int) -> int:
+     """Return the sum of two integers."""
+ 
+-    return left - right
++    return left + right

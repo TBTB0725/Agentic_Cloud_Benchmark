@@ -1,0 +1,11 @@
+{
+  "name": "acbench-local-suite",
+  "scenarios": [
+    {
+      "scenario": "acbench/scenarios/examples/code_only_local_repo_buggy.json"
+    },
+    {
+      "scenario": "acbench/scenarios/examples/combined_local_fixture.json"
+    }
+  ]
+}

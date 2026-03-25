@@ -1,0 +1,33 @@
+{
+  "scenario_id": "ops_only_astronomy_shop_product_catalog_failure",
+  "title": "Astronomy Shop ops-only incident benchmark",
+  "mode": "ops_only",
+  "service": {
+    "application": "astronomy-shop",
+    "service": "product-catalog-service",
+    "deployment": "k8s"
+  },
+  "ops_fault": {
+    "source": "aiopslab",
+    "problem_id": "astronomy_shop_product_catalog_service_failure-detection-1",
+    "description": "Reuse the existing AIOpsLab product catalog failure scenario as the first ops benchmark seed."
+  },
+  "success_criteria": {
+    "require_detection": true,
+    "require_localization": false,
+    "require_repair": false
+  },
+  "metrics": [
+    "TTD",
+    "TTL",
+    "steps",
+    "in_tokens",
+    "out_tokens"
+  ],
+  "tags": [
+    "prototype",
+    "ops",
+    "astronomy-shop"
+  ],
+  "notes": "Phase 1 example scenario used to validate the standalone ACBench runner against a real AIOpsLab detection task."
+}

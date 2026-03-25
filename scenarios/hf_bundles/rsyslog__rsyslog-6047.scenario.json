@@ -1,0 +1,31 @@
+{
+  "scenario_id": "swebench_native_rsyslog__rsyslog-6047",
+  "title": "Native SWE-bench-Live benchmark for rsyslog__rsyslog-6047",
+  "mode": "code_only",
+  "service": {
+    "application": "swe-bench-live",
+    "service": "rsyslog",
+    "deployment": "container"
+  },
+  "code_fault": {
+    "source": "swe-bench-live",
+    "defect_id": "rsyslog__rsyslog-6047",
+    "description": "Native SWE-bench-Live instance from rsyslog/rsyslog.",
+    "instance_path": "acbench\\scenarios\\hf_bundles\\rsyslog__rsyslog-6047.instance.json",
+    "platform": "linux"
+  },
+  "success_criteria": {
+    "require_repair": true,
+    "require_test_success": true
+  },
+  "metrics": [
+    "resolved"
+  ],
+  "tags": [
+    "prototype",
+    "code",
+    "swebench-live",
+    "native"
+  ],
+  "notes": "Generated from a native SWE-bench-Live instance JSON."
+}

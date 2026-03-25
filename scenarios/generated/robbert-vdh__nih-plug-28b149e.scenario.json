@@ -1,0 +1,31 @@
+{
+  "scenario_id": "swebench_native_robbert-vdh__nih-plug-28b149e",
+  "title": "Native SWE-bench-Live benchmark for robbert-vdh__nih-plug-28b149e",
+  "mode": "code_only",
+  "service": {
+    "application": "swe-bench-live",
+    "service": "nih-plug",
+    "deployment": "container"
+  },
+  "code_fault": {
+    "source": "swe-bench-live",
+    "defect_id": "robbert-vdh__nih-plug-28b149e",
+    "description": "Native SWE-bench-Live instance from robbert-vdh/nih-plug.",
+    "instance_path": "acbench\\out\\robbert-vdh__nih-plug-28b149e.json",
+    "platform": "linux"
+  },
+  "success_criteria": {
+    "require_repair": true,
+    "require_test_success": true
+  },
+  "metrics": [
+    "resolved"
+  ],
+  "tags": [
+    "prototype",
+    "code",
+    "swebench-live",
+    "native"
+  ],
+  "notes": "Generated from a native SWE-bench-Live instance JSON."
+}

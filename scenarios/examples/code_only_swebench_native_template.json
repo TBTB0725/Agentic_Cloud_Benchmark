@@ -1,0 +1,31 @@
+{
+  "scenario_id": "code_only_swebench_native_template",
+  "title": "Native SWE-bench-Live code benchmark template",
+  "mode": "code_only",
+  "service": {
+    "application": "swe-bench-live",
+    "service": "native-instance",
+    "deployment": "container"
+  },
+  "code_fault": {
+    "source": "swe-bench-live",
+    "defect_id": "native-template",
+    "description": "Point instance_path at a complete upstream SWE-bench-Live instance JSON extracted from a dataset JSONL file.",
+    "instance_path": "acbench/out/replace_with_instance.json",
+    "platform": "linux"
+  },
+  "success_criteria": {
+    "require_repair": true,
+    "require_test_success": true
+  },
+  "metrics": [
+    "resolved"
+  ],
+  "tags": [
+    "prototype",
+    "code",
+    "swebench-live",
+    "native"
+  ],
+  "notes": "Use this after extracting a full instance record with --extract-swebench-jsonl-instance."
+}

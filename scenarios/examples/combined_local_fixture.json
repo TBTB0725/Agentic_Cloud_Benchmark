@@ -1,0 +1,55 @@
+{
+  "scenario_id": "combined_local_fixture",
+  "title": "Local combined prototype benchmark",
+  "mode": "combined",
+  "service": {
+    "application": "acbench-local-fixture",
+    "service": "samplepkg",
+    "deployment": "local",
+    "repository_path": "acbench/fixtures/local_repo_buggy"
+  },
+  "ops_fault": {
+    "source": "acbench",
+    "problem_id": "synthetic-local-incident-001",
+    "description": "Synthetic local ops incident used to validate the combined benchmark path without external infrastructure."
+  },
+  "code_fault": {
+    "source": "acbench",
+    "defect_id": "local-repo-buggy-addition-001",
+    "description": "Seeded local repository defect repaired via a patch.",
+    "target_files": [
+      "src/samplepkg/calculator.py"
+    ]
+  },
+  "build": {
+    "rebuild_cmds": [
+      "python -m compileall src"
+    ],
+    "test_cmds": [
+      "$env:PYTHONPATH='src'; python -m unittest discover -s tests -p \"test_*.py\" -v"
+    ],
+    "print_cmds": [],
+    "log_parser": "none"
+  },
+  "success_criteria": {
+    "require_detection": true,
+    "require_localization": true,
+    "require_repair": true,
+    "require_build_success": true,
+    "require_test_success": true
+  },
+  "metrics": [
+    "TTD",
+    "TTL",
+    "TTM",
+    "build_success",
+    "test_success"
+  ],
+  "tags": [
+    "prototype",
+    "combined",
+    "fixture"
+  ],
+  "notes": "Use with --code-patch acbench/patches/local_repo_buggy_fix.diff to validate the first live combined ACBench path.",
+  "gold_patch_path": "acbench/patches/local_repo_buggy_fix.diff"
+}
